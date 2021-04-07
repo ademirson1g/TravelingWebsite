@@ -1,5 +1,6 @@
-<?php 
-include 'admin/db_connect.php'; 
+
+?php
+include 'admin/db_connect.php';
 if($_SERVER['REQUEST_METHOD'] == "POST"){
 	foreach($_POST as $k => $v){
 		$$k = $v;
@@ -77,10 +78,10 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
                                 </form>
                             </div>
                         </div>
-                    </div>                        
                     </div>
                     </div>
-                    
+                    </div>
+
                 </div>
             </div>
         </header>
@@ -95,7 +96,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 							</div>
 						</div>
 						<hr class="divider">
-				<?php 
+				<?php
 				$airport = $conn->query("SELECT * FROM airport_list ");
 				while($row = $airport->fetch_assoc()){
 					$aname[$row['id']] = ucwords($row['airport'].', '.$row['location']);
@@ -131,7 +132,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 						<h5 class="text-center"><b>No result.</b></h5>
 					</div>
 				<?php endif; ?>
-					
+
 				<?php if(isset($trip) && $trip ==2): ?>
 					<hr>
 					<div class="row">
@@ -140,7 +141,7 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
 						</div>
 					</div>
 						<hr class="divider">
-				<?php 
+				<?php
 				$airport = $conn->query("SELECT * FROM airport_list ");
 				while($row = $airport->fetch_assoc()){
 					$aname[$row['id']] = ucwords($row['airport'].', '.$row['location']);
@@ -186,14 +187,14 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
     <style>
     	#flight img{
     		max-height: 300px;
-    		max-width: 200px; 
+    		max-width: 200px;
     	}
     	#flight p{
     		margin: unset
       	}
     </style>
     <script>
-        
+
        $('.view_schedule').click(function(){
 			uni_modal($(this).attr('data-name')+" - Schedule","view_doctor_schedule.php?id="+$(this).attr('data-id'))
 		})
@@ -212,4 +213,3 @@ if($_SERVER['REQUEST_METHOD'] == "POST"){
             }
         })
     </script>
-	
